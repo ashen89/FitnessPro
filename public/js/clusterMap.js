@@ -7,8 +7,8 @@ const gymgrounds = { features: gymgroundsData }
 const map = new mapboxgl.Map({
     container: 'cluster-map',
     style: 'mapbox://styles/mapbox/dark-v10',
-    center: [-103.5917, 40.6699],
-    zoom: 3
+    center: [80.6511, 7.8742],
+    zoom: 6.5,
 });
 
 map.on('load', () => {
