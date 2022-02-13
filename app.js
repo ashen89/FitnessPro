@@ -23,7 +23,7 @@ const reviewRoute = require("./routes/review");
 const userRoute = require("./routes/user");
 
 /*========================DATABASE CONNECTION=========================*/
-const dbUrl = process.env.DB_URL;
+const dbUrl = process.env.DB_URL || "mongodb://localhost:27017/fitnessPro";
 
 mongoose.connect(dbUrl), //"mongodb://localhost:27017/fitnessPro"
 {
@@ -49,7 +49,7 @@ app.use(mongoSanitize());
 
 const store = new MongoStore({
     mongoUrl: dbUrl,
-    secret: process.env.SECRET, //'thisshouldbebettersecret' process.env.secret coming fro heroku
+    secret: process.env.SECRET || 'thisshouldbebettersecret', //'thisshouldbebettersecret' process.env.secret coming fro heroku
     touchAfter: 24 * 60 * 60,
 });
 store.on('error', function (e) {
@@ -58,7 +58,7 @@ store.on('error', function (e) {
 const sessionConfig = {
     store,
     name: "session",
-    secret: process.env.SECRET,
+    secret: process.env.SECRET || 'thisshouldbebettersecret',
     resave: false,
     saveUninitialized: true,
     cookie: {
