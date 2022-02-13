@@ -43,8 +43,14 @@ module.exports.editForm = async (req, res) => {
 };
 
 module.exports.update = async (req, res, next) => {
+    const geodata = await geocoder.forwardGeocode({
+        query: req.body.gymground.location,
+        limit: 1,
+    }).send();
+
     const { id } = req.params;
     const gymground = await Gymground.findByIdAndUpdate(id, req.body.gymground);
+    Gymground.geometry = geodata.body.features[0].geometry;
     const img = req.files.map(file => ({ url: file.path, filename: file.filename }));
     gymground.images.push(...img)
     await gymground.save();
