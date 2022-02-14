@@ -32,7 +32,7 @@
 
 ## ⚙️ Features
 -	Login, sign-up, Admin role
--	RESTful routes (Create, Read, Update, Delete) for campgrounds, comments, and reviews
+-	RESTful routes (Create, Read, Update, Delete) for fitness centres, comments, and reviews
 -	Create and Update forms have both client-side and server-side validation
 -	Create routes have authentication
 -	Update, and Delete routes have authentication and authorization
