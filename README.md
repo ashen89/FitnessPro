@@ -37,3 +37,36 @@
 -	Create routes have authentication
 -	Update, and Delete routes have authentication and authorization
 -	[Google Maps API](https://developers.google.com/maps/documentation)
+
+## 🚀 Getting Started
+### To run this project on your system:
+Create an .env file and add values to the following variables:
+```
+GEOCODER_API_KEY=
+API_KEY=
+DATABASEURL=
+PASSPORT_SECRET=
+ADMIN_CODE=
+```
+Make sure you have [MongoDB](https://docs.mongodb.com/manual/installation/) installed on your system
+In a terminal window, initialize a MongoDB Database 
+```
+$ ./mongod
+```
+In a second terminal window, access the MongoDB Database with Mongoose
+```
+$ mongoose
+```
+In a third terminal window, install dependencies using npm:
+
+```
+$ npm install
+```
+And then run the application with
+```
+$ npm start
+```
+or for hot reloading (recommended)
+```
+$ nodemon app.js
+```
